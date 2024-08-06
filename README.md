@@ -8,16 +8,18 @@ Algorithms Used
 1. Logistic Regression
 •	Description: Logistic regression is a statistical method for analyzing a dataset in which there are one or more independent variables that determine an outcome. The outcome is measured with a dichotomous variable (in which there are only two possible outcomes). In this context, it is used to classify transactions as either fraudulent or non-fraudulent.
 •	Implementation:
+
 from sklearn.linear_model import LogisticRegression
 clf = LogisticRegression()
 clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 
-2. Decision Tree Classifier
+3. Decision Tree Classifier
    
 •	Description: Decision tree is a supervised learning algorithm that is mostly used for classification problems. It works for both categorical and continuous input and output variables. In this context, it is used to classify transactions based on a series of decision rules inferred from the data features.
 
 •	Implementation
+
 from sklearn.tree import DecisionTreeClassifier
 clf = DecisionTreeClassifier()
 clf.fit(X_train, y_train)
@@ -31,6 +33,7 @@ a. Undersampling
 
 •	Description: This technique involves balancing the dataset by reducing the number of non-fraudulent transactions to match the number of fraudulent ones.
 •	Implementation:
+
 normal = data[data['Class'] == 0]
 fraud = data[data['Class'] == 1]
 normal_sample = normal.sample(n=473)
