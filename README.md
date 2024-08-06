@@ -13,7 +13,6 @@ clf = LogisticRegression()
 clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 
-
 2.	Decision Tree Classifier
 •	Description: Decision tree is a supervised learning algorithm that is mostly used for classification problems. It works for both categorical and continuous input and output variables. In this context, it is used to classify transactions based on a series of decision rules inferred from the data features.
 •	Implementation
@@ -24,7 +23,7 @@ y_pred = clf.predict(X_test)
 
 3.	Handling Imbalanced Data
 Imbalanced data is a common issue in fraud detection as fraudulent transactions are much rarer compared to non-fraudulent ones. Two techniques were used to address this issue:
-1.	Undersampling
+a.	Undersampling
 •	Description: This technique involves balancing the dataset by reducing the number of non-fraudulent transactions to match the number of fraudulent ones.
 •	Implementation:
 normal = data[data['Class'] == 0]
@@ -32,7 +31,7 @@ fraud = data[data['Class'] == 1]
 normal_sample = normal.sample(n=473)
 new_data = pd.concat([normal_sample, fraud], ignore_index=True)
 
-2.	SMOTE (Synthetic Minority Over-sampling Technique)
+b.	SMOTE (Synthetic Minority Over-sampling Technique)
 •	Description: SMOTE is an oversampling technique used to generate synthetic samples for the minority class (fraudulent transactions) to balance the dataset.
 
 from imblearn.over_sampling import SMOTE
